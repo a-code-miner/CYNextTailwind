@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+	font-family: "DanaMed";
+	src: url("/assets/fonts/fa/Dana-Medium.ttf") format("truetype");
+}
+
+* {
+	font-family: DanaMed;
+}
