@@ -1,8 +1,10 @@
 'use client';
 
 import { loginAction } from '@/actions/authAction';
+import AuthButton from '@/components/AuthButton';
 import ToggleBtn from '@/components/partials/ToggleBtn';
 import SubmitForm from '@/components/SubmitForm';
+// import { GoogleOAuthProvider } from '@react-oauth/google';
 import React from 'react';
 import { useFormState } from 'react-dom';
 
@@ -31,6 +33,10 @@ const Login = () => {
 
                 <div className='my-6 px-4'>
                     <SubmitForm />
+                </div>
+
+                <div className='flex justify-center mt-5'>
+                    <AuthButton />
                 </div>
             </form>
         </div>
