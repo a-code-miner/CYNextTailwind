@@ -1,5 +1,6 @@
 'use client';
-import { GoogleOAuthProvider } from "@react-oauth/google";
+// import { GoogleOAuthProvider } from "@react-oauth/google";
+import { SessionProvider } from 'next-auth/react';
 
 const AuthProvider = ({ children }) => {
     if (!process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID) {
@@ -7,7 +8,8 @@ const AuthProvider = ({ children }) => {
         return <div>{children}</div>
     };
     return (
-        <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>{children}</GoogleOAuthProvider>
+        <SessionProvider>{children}</SessionProvider>
+        // <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>{children}</GoogleOAuthProvider>
     );
 };
 
