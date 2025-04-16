@@ -38,3 +38,20 @@ export const loginAction = async (prevState, formData) => {
     };
 };
 
+
+export const isLoggedIn = async () => {
+    const token = cookies().get('loginToken')?.value;
+
+    if (!token) return false;
+
+    const res = await fetch('https://ecomadminapi.azhadev.ir/api/auth/user', {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    });
+
+    if (res.status !== 200) return false;
+
+    return true;
+};
+
